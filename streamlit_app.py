@@ -8,18 +8,18 @@ opciones_decision = ["¡Sí, hagalo mas que real!", "No, ni por el hpta!", "eche
 opciones_direccion = ["Ir a la derecha", "Ir a la izquierda", "Dar media vuelta", "Seguir derecho"]
 
 
-tipo = st.selectbox("¿Qué quiere elegir al azar hoy?", ["decision", "direccion", "numero"])
+tipo = st.selectbox("¿Qué quiere elegir al azar hoy?", ["Decision", "Direccion", "Numero"])
 
 # Un botón para activar la magia
 if st.button("¡AZAAAAAR!"):
-    if tipo == "decision":
+    if tipo == "Decision":
         resultado = random.choice(opciones_decision)
         st.success(f"El viejo y traidor azar dice: {resultado}")
         
-    elif tipo == "direccion":
+    elif tipo == "Direccion":
         resultado = random.choice(opciones_direccion)
         st.info(f"El azar señala: {resultado}")
         
-    elif tipo == "numero":
+    elif tipo == "Numero":
         numero_suerte = random.randint(1, 100)
         st.warning(f"Tu número de hoy sera: {numero_suerte}")

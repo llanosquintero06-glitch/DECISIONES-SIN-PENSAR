@@ -1,0 +1,25 @@
+import streamlit as st
+import random
+
+st.title("DECISIONES SIN PENSAR")
+st.write("¡¿Pensar? ¿Quién carajo hace eso?!")
+
+opciones_decision = ["¡Sí, hagalo mas que real!", "No, ni por el hpta!", "echele cabeza"]
+opciones_direccion = ["Ir a la derecha", "Ir a la izquierda", "Dar media vuelta", "Seguir derecho"]
+
+
+tipo = st.selectbox("¿Qué quiere elegir al azar hoy?", ["decision", "direccion", "numero"])
+
+# Un botón para activar la magia
+if st.button("¡AZAAAAAR!"):
+    if tipo == "decision":
+        resultado = random.choice(opciones_decision)
+        st.success(f"El viejo y traidor azar dice: {resultado}")
+        
+    elif tipo == "direccion":
+        resultado = random.choice(opciones_direccion)
+        st.info(f"El azar señala: {resultado}")
+        
+    elif tipo == "numero":
+        numero_suerte = random.randint(1, 100)
+        st.warning(f"Tu número de hoy sera: {numero_suerte}")
